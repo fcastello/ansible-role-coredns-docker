@@ -20,7 +20,7 @@ coredns_forward_zones:
 
 
 ###### You can defined custom DNS zones. The static hosts stucture is shared with the DHCP static hsots structure.
-#core_dns_zones:
+#coredns_zones:
 #  - name: fcast.ar
 ### Static hosts structure is shared with the DHCP service so they are defined in the same place needs to be part of the host
 #    static_hosts:
