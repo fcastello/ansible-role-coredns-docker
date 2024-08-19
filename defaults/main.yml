@@ -35,9 +35,9 @@ coredns_forward_zones:
 #        value: 192.168.1.3 # Mandatory, Fixed IP address
 #        type: A # Mandatory, Mac Address of the device
 #        ttl: 60
-#      - name: myhost2 # Mandatory, Hostname (must be unique)
-#        value: 192.168.1.3 # Mandatory, Fixed IP address
-#        type: A # Mandatory, Mac Address of the device
+#      - name: router # Mandatory, Hostname (must be unique)
+#        value: myhost2.home.local. # Mandatory, Fixed IP address
+#        type: CNAME # Mandatory, Mac Address of the device
 #        ttl: 60
 
 

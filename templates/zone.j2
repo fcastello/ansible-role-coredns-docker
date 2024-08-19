@@ -1,0 +1,13 @@
+$ORIGIN {{ item.name }}.
+@	3600 IN	SOA ns1.{{ item.name }}. admin.{{ item.name }}.  {{ ansible_date_time.date | replace('-','') }}{{ ansible_date_time.hour }} 7200 3600 1209600 3600
+	3600 IN NS {{ item.name }}.
+	60 IN A {{ networks[0].gateway }}
+ns1	60 IN A {{ networks[0].dns_servers }}
+
+{% for host in item.static_hosts %}
+{{ host.name }}         {{ host.ttl|default(60) }}    IN A       {{ host.ip }}
+{% endfor %}
+
+{% for record in item.dns_records %}
+{{ record.name }}               {{ record.ttl|default(60) }}   IN {{ record.type }}       {{ record.value }}
+{% endfor %}
