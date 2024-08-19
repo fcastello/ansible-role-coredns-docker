@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+
+- name: Run coredns server
+  hosts: all
+  gather_facts: true
+  become: true
+
+  tasks:
+    - name: Deploy coredns
+      import_role:
+        name: ../../ansible-role-coredns-docker
