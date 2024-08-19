@@ -1,0 +1,43 @@
+---
+
+coredns_container_name: coredns
+coredns_version: "1.11.3"
+coredns_container_image: "coredns/coredns:{{ coredns_version }}"
+coredns_container_recreate: false
+
+coredns_bind_interface: eth0
+
+coredns_config_dir: /data/coredns
+
+coredns_global_domain_name: home.local
+coredns_global_dns_servers: "8.8.8.8, 1.1.1.1" # Separated by coma
+
+coredns_forward_zones:
+  - name: "."
+    dns_servers: "1.1.1.1 8.8.8.8 1.0.0.1 8.8.4.4" # Separated by a space
+  - name: "cluster.local"
+    dns_servers: "192.168.251.53" # Separated by a space
+
+
+###### You can defined custom DNS zones. The static hosts stucture is shared with the DHCP static hsots structure.
+#core_dns_zones:
+#  - name: fcast.ar
+### Static hosts structure is shared with the DHCP service so they are defined in the same place needs to be part of the host
+#    static_hosts:
+#      - name: myhost # Mandatory, Hostname (must be unique)
+#        ip: 192.168.1.3 # Mandatory, Fixed IP address
+#        mac: ab:cd:ef:01:02:03 # Mandatory, Mac Address of the device
+#        ttl: 60
+### The records variables are for custom records that are not defined in static hosts
+### Currently they support A records and CNAME. Other records might need some work
+#    dns_records:
+#      - name: myhost2 # Mandatory, Hostname (must be unique)
+#        value: 192.168.1.3 # Mandatory, Fixed IP address
+#        type: A # Mandatory, Mac Address of the device
+#        ttl: 60
+#      - name: myhost2 # Mandatory, Hostname (must be unique)
+#        value: 192.168.1.3 # Mandatory, Fixed IP address
+#        type: A # Mandatory, Mac Address of the device
+#        ttl: 60
+
+
