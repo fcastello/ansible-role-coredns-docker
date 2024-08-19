@@ -1,0 +1,22 @@
+{% for forward_zone in coredns_forward_zones %}
+{{ forward_zone.name }}:53 {
+    forward . {{ forward_zone.dns_servers }}
+    log
+    errors
+    loadbalance
+    prometheus :9153
+    reload
+    health :8053
+}
+{% endfor %}
+
+
+{% for zone in coredns_zones %}
+{{ zone.name }}:53 {
+    prometheus :9153
+    file /config/zones/{{  zone.name }}.db
+    log
+    errors
+    reload
+}
+{% endfor %}
