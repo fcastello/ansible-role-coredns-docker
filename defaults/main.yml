@@ -5,7 +5,6 @@ coredns_version: "1.11.3"
 coredns_container_image: "coredns/coredns:{{ coredns_version }}"
 coredns_container_recreate: false
 
-coredns_bind_interface: eth0
 
 coredns_config_dir: /data/coredns
 

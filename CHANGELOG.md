@@ -7,4 +7,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.0.1] - 2024-08-19 -  Initial commit
 ### Added
-- 
+- Service zones from files and using forward zones templates
