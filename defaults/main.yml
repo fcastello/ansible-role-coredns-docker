@@ -19,24 +19,22 @@ coredns_forward_zones:
 
 
 ###### You can defined custom DNS zones. The static hosts stucture is shared with the DHCP static hsots structure.
-#coredns_zones:
-#  - name: fcast.ar
+# coredns_zones:
+#   - name: fcast.ar
 ### Static hosts structure is shared with the DHCP service so they are defined in the same place needs to be part of the host
-#    static_hosts:
-#      - name: myhost # Mandatory, Hostname (must be unique)
-#        ip: 192.168.1.3 # Mandatory, Fixed IP address
-#        mac: ab:cd:ef:01:02:03 # Mandatory, Mac Address of the device
-#        ttl: 60
+#     static_hosts:
+#       - name: myhost # Mandatory, Hostname (must be unique)
+#         ip: 192.168.1.3 # Mandatory, Fixed IP address
+#         mac: ab:cd:ef:01:02:03 # Mandatory, Mac Address of the device
+#         ttl: 60
 ### The records variables are for custom records that are not defined in static hosts
 ### Currently they support A records and CNAME. Other records might need some work
-#    dns_records:
-#      - name: myhost2 # Mandatory, Hostname (must be unique)
-#        value: 192.168.1.3 # Mandatory, Fixed IP address
-#        type: A # Mandatory, Mac Address of the device
-#        ttl: 60
-#      - name: router # Mandatory, Hostname (must be unique)
-#        value: myhost2.home.local. # Mandatory, Fixed IP address
-#        type: CNAME # Mandatory, Mac Address of the device
-#        ttl: 60
-
-
+#     dns_records:
+#       - name: myhost2 # Mandatory, Hostname (must be unique)
+#         value: 192.168.1.3 # Mandatory, Fixed IP address
+#         type: A # Mandatory, Mac Address of the device
+#         ttl: 60
+#       - name: router # Mandatory, Hostname (must be unique)
+#         value: myhost2.home.local. # Mandatory, Fixed IP address
+#         type: CNAME # Mandatory, Mac Address of the device
+#         ttl: 60
